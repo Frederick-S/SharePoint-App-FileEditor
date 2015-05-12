@@ -20,6 +20,8 @@
             <div class="dot1"></div>
             <div class="dot2"></div>
         </div>
+        <p class="error">
+        </p>
     </div>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>
     <script type="text/javascript" src="/_layouts/15/init.js"></script>
@@ -28,4 +30,7 @@
     <script type="text/javascript" src="/_layouts/15/SP.RequestExecutor.js"></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../Scripts/App.js"></script>
+    <script type="text/javascript">
+        App.run();
+    </script>
 </asp:Content>

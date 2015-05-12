@@ -1,26 +1,116 @@
-﻿'use strict';
+﻿(function ($, SP, window) {
+    function getQueryStringParameters() {
+        var params = document.URL.split("?")[1].split("&");
+        var obj = {};
 
-var context = SP.ClientContext.get_current();
-var user = context.get_web().get_currentUser();
+        for (var i = 0; i < params.length; i = i + 1) {
+            var singleParam = params[i].split("=");
+            obj[singleParam[0]] = decodeURIComponent(singleParam[1]);
+        }
 
-// 此代码在 DOM 准备就绪时运行，并且可以创建使用 SharePoint 对象模型所需的上下文对象
-$(document).ready(function () {
-    getUserName();
-});
+        return obj;
+    }
 
-// 此函数准备、加载然后执行 SharePoint 查询以获取当前用户信息
-function getUserName() {
-    context.load(user);
-    context.executeQueryAsync(onGetUserNameSuccess, onGetUserNameFail);
-}
+    function getFileServerRelativeUrl() {
+        var deferred = $.Deferred();
 
-// 如果上述调用成功，则执行此函数
-// 此函数将“message”元素的内容替换为用户名
-function onGetUserNameSuccess() {
-    $('#message').text('Hello ' + user.get_title());
-}
+        var queryStringParameters = getQueryStringParameters();
 
-// 将在上述调用失败时执行此函数
-function onGetUserNameFail(sender, args) {
-    alert('Failed to get user name. Error:' + args.get_message());
-}
+        if (!queryStringParameters.SPListId && !queryStringParameters.SPListItemId) {
+            return deferred.reject('This app is a custom menu item action, please visit this page from menu item.');
+        }
+
+        var appWebUrl = queryStringParameters.SPAppWebUrl;
+        var hostWebUrl = queryStringParameters.SPHostUrl;
+
+        var clientContext = SP.ClientContext.get_current();
+        var appContextSite = new SP.AppContextSite(clientContext, hostWebUrl);
+        var web = appContextSite.get_web();
+        var list = web.get_lists().getById(queryStringParameters.SPListId);
+        var listItem = list.getItemById(queryStringParameters.SPListItemId);
+        var file = listItem.get_file();
+
+        clientContext.load(file, 'ServerRelativeUrl');
+        clientContext.executeQueryAsync(function (sender, args) {
+            var serverRelativeUrl = file.get_serverRelativeUrl();
+
+            deferred.resolve(serverRelativeUrl, appWebUrl, hostWebUrl);
+        }, function (sender, args) {
+            var message = args.get_message();
+
+            deferred.reject(message);
+        });
+
+        return deferred.promise();
+    }
+
+    function getFileServerRelativeUrlOnFail(message) {
+        $('.spinner').hide();
+        $('.error').text(message).show();
+    }
+
+    function getFileExtension(fileServerRelativeUrl) {
+        if (!fileServerRelativeUrl) {
+            return '';
+        }
+
+        var matches = fileServerRelativeUrl.match(/\.(\w+)$/);
+
+        if (matches.length > 1) {
+            return matches[1];
+        } else {
+            return '';
+        }
+    }
+
+    function isSupportedFileExtension(fileExtension) {
+        return /txt|md|xml|js|css|html/i.test(fileExtension);
+    }
+
+    function readFileContents(fileServerRelativeUrl, appWebUrl, hostWebUrl) {
+        var deferred = $.Deferred();
+
+        var fileExtension = getFileExtension(fileServerRelativeUrl);
+
+        if (!isSupportedFileExtension(fileExtension)) {
+            return deferred.reject('Unsupported file extension.');
+        }
+
+        var executor = new SP.RequestExecutor(appWebUrl);
+        var options = {
+            url: appWebUrl + "/_api/SP.AppContextSite(@target)/web/GetFileByServerRelativeUrl('" + fileServerRelativeUrl + "')/$value?@target='" + hostWebUrl + "'",
+            type: "GET",
+            success: function (response) {
+                if (response.statusCode == 200) {
+                    alert(response.body);
+                } else {
+                    deferred.reject(response.statusCode + ": " + response.statusText);
+                }
+            },
+            error: function (response) {
+                deferred.reject(response.statusCode + ": " + response.statusText);
+            }
+        };
+
+        executor.executeAsync(options);
+
+        return deferred.promise();
+    }
+
+    function readFileContentsOnFail(message) {
+        $('.spinner').hide();
+        $('.error').text(message).show();
+    }
+
+    function render(fileContents) {
+
+    }
+
+    var App = {
+        run: function () {
+            getFileServerRelativeUrl().then(readFileContents, getFileServerRelativeUrlOnFail).then(render, readFileContentsOnFail);
+        }
+    };
+
+    window.App = App;
+})(jQuery, SP, window);
