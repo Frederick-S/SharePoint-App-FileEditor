@@ -1,5 +1,5 @@
 # Introduction
-A SharePoint 2013 app to edit JavaScript or CSS files.
+A SharePoint 2013 app to edit JavaScript or CSS files in document library.
 
 # Usage
 1. Deploy the app with Visual Studio.
