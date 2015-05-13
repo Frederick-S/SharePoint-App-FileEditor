@@ -1,5 +1,5 @@
 # Introduction
-A simple SharePoint 2013 app to display current web content structure in tree view.
+A SharePoint 2013 app to edit JavaScript or CSS files.
 
 # Usage
 1. Deploy the app with Visual Studio.
