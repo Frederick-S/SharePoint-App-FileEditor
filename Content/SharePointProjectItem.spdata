@@ -4,5 +4,7 @@
     <ProjectItemFile Source="Elements.xml" Target="Content\" Type="ElementManifest" />
     <ProjectItemFile Source="App.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="spinner.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="alertify\alertify.core.css" Target="Content\alertify\" Type="ElementFile" />
+    <ProjectItemFile Source="alertify\alertify.default.css" Target="Content\alertify\" Type="ElementFile" />
   </Files>
 </ProjectItem>

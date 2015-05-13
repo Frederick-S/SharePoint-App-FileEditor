@@ -11,5 +11,6 @@
     <ProjectItemFile Source="ace\theme-tomorrow.js" Target="Scripts\ace\" Type="ElementFile" />
     <ProjectItemFile Source="ace\worker-css.js" Target="Scripts\ace\" Type="ElementFile" />
     <ProjectItemFile Source="ace\worker-html.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="alertify\alertify.min.js" Target="Scripts\alertify\" Type="ElementFile" />
   </Files>
 </ProjectItem>

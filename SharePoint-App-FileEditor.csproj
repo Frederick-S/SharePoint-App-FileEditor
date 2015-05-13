@@ -43,6 +43,8 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Content\alertify\alertify.core.css" />
+    <Content Include="Content\alertify\alertify.default.css" />
     <Content Include="Scripts\ace\mode-css.js" />
     <Content Include="Scripts\ace\mode-html.js" />
     <Content Include="Scripts\ace\mode-javascript.js" />
@@ -68,6 +70,7 @@
       <SharePointProjectItemId>{61c30d6f-6dd5-48b6-a780-cbf12222a20d}</SharePointProjectItemId>
     </None>
     <Content Include="Scripts\ace\ace.js" />
+    <Content Include="Scripts\alertify\alertify.min.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
   </ItemGroup>
@@ -106,6 +109,7 @@
       <SubType>Designer</SubType>
     </AppManifestFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

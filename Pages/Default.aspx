@@ -8,6 +8,8 @@
     <meta name="WebPartPageExpansion" content="full" />
     <link rel="Stylesheet" type="text/css" href="../Content/App.css" />
     <link rel="Stylesheet" type="text/css" href="../Content/spinner.css" />
+    <link rel="Stylesheet" type="text/css" href="../Content/alertify/alertify.core.css" />
+    <link rel="Stylesheet" type="text/css" href="../Content/alertify/alertify.default.css" />
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
@@ -30,6 +32,7 @@
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
     <script type="text/javascript" src="/_layouts/15/SP.RequestExecutor.js"></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/alertify/alertify.min.js"></script>
     <script type="text/javascript" src="../Scripts/ace/ace.js"></script>
     <script type="text/javascript" src="../Scripts/App.js"></script>
     <script type="text/javascript">

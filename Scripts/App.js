@@ -1,4 +1,4 @@
-﻿(function ($, SP, window) {
+﻿(function ($, SP, window, alertify) {
     function getQueryStringParameters() {
         var params = document.URL.split("?")[1].split("&");
         var obj = {};
@@ -162,11 +162,11 @@
     }
 
     function writeToFileOnDone() {
-        alert('Saved!');
+        alertify.success("Saved.", 2000);
     }
 
-    function writeToFileOnFail() {
-        alert('Failed!');
+    function writeToFileOnFail(errorMessage) {
+        alertify.error(errorMessage, 2000);
     }
 
     var App = {
@@ -176,4 +176,4 @@
     };
 
     window.App = App;
-})(jQuery, SP, window);
+})(jQuery, SP, window, alertify);
