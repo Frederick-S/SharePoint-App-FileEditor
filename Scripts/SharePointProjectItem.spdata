@@ -9,5 +9,7 @@
     <ProjectItemFile Source="ace\mode-javascript.js" Target="Scripts\ace\" Type="ElementFile" />
     <ProjectItemFile Source="ace\worker-javascript.js" Target="Scripts\ace\" Type="ElementFile" />
     <ProjectItemFile Source="ace\theme-tomorrow.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\worker-css.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\worker-html.js" Target="Scripts\ace\" Type="ElementFile" />
   </Files>
 </ProjectItem>

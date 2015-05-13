@@ -8,5 +8,7 @@
     <File Path="Scripts\ace\mode-javascript.js" Url="Scripts/ace/mode-javascript.js" ReplaceContent="TRUE" />
     <File Path="Scripts\ace\worker-javascript.js" Url="Scripts/ace/worker-javascript.js" ReplaceContent="TRUE" />
     <File Path="Scripts\ace\theme-tomorrow.js" Url="Scripts/ace/theme-tomorrow.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\worker-css.js" Url="Scripts/ace/worker-css.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\worker-html.js" Url="Scripts/ace/worker-html.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

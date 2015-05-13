@@ -47,6 +47,8 @@
     <Content Include="Scripts\ace\mode-html.js" />
     <Content Include="Scripts\ace\mode-javascript.js" />
     <Content Include="Scripts\ace\theme-tomorrow.js" />
+    <Content Include="Scripts\ace\worker-css.js" />
+    <Content Include="Scripts\ace\worker-html.js" />
     <Content Include="Scripts\ace\worker-javascript.js" />
     <None Include="MenuItemEditFileAction\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{51752d02-0065-4f19-b919-783320df7ec2}</SharePointProjectItemId>

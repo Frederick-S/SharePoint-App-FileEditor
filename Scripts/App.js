@@ -97,10 +97,6 @@
         return deferred.promise();
     }
 
-    function writeToFile(fileServerRelativeUrl) {
-
-    }
-
     function readFileContentsOnFail(message) {
         $('.spinner').hide();
         $('.error').text(message).show();
@@ -127,7 +123,50 @@
                 break;
         }
 
+        $(document).bind('keydown', function (e) {
+            if (e.ctrlKey && (e.which == 83)) {
+                e.preventDefault();
 
+                writeToFile(editor.getValue(), fileServerRelativeUrl).then(writeToFileOnDone, writeToFileOnFail);
+
+                return false;
+            }
+        });
+    }
+
+    function writeToFile(fileContents, fileServerRelativeUrl) {
+        var deferred = $.Deferred();
+
+        var queryStringParameters = getQueryStringParameters();
+
+        var appWebUrl = queryStringParameters.SPAppWebUrl;
+        var hostWebUrl = queryStringParameters.SPHostUrl;
+
+        var executor = new SP.RequestExecutor(appWebUrl);
+        var options = {
+            url: appWebUrl + "/_api/SP.AppContextSite(@target)/web/GetFileByServerRelativeUrl('" + fileServerRelativeUrl + "')/$value?@target='" + hostWebUrl + "'",
+            method: "POST",
+            body: fileContents,
+            headers: { "X-HTTP-Method": "PUT" },
+            success: function (response) {
+                deferred.resolve();
+            },
+            error: function (response) {
+                deferred.reject(response.statusCode + ": " + response.statusText);
+            }
+        };
+
+        executor.executeAsync(options);
+
+        return deferred.promise();
+    }
+
+    function writeToFileOnDone() {
+        alert('Saved!');
+    }
+
+    function writeToFileOnFail() {
+        alert('Failed!');
     }
 
     var App = {
