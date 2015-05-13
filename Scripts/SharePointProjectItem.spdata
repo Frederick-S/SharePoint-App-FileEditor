@@ -3,11 +3,11 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
     <ProjectItemFile Source="App.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="ace.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="mode-css.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="mode-html.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="mode-javascript.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="worker-javascript.js" Target="Scripts\" Type="ElementFile" />
-    <ProjectItemFile Source="theme-tomorrow.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\ace.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\mode-css.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\mode-html.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\mode-javascript.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\worker-javascript.js" Target="Scripts\ace\" Type="ElementFile" />
+    <ProjectItemFile Source="ace\theme-tomorrow.js" Target="Scripts\ace\" Type="ElementFile" />
   </Files>
 </ProjectItem>

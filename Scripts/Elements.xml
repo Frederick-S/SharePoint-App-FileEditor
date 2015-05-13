@@ -2,11 +2,11 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Scripts">
     <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\ace.js" Url="Scripts/ace.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\mode-css.js" Url="Scripts/mode-css.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\mode-html.js" Url="Scripts/mode-html.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\mode-javascript.js" Url="Scripts/mode-javascript.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\worker-javascript.js" Url="Scripts/worker-javascript.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\theme-tomorrow.js" Url="Scripts/theme-tomorrow.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\ace.js" Url="Scripts/ace/ace.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\mode-css.js" Url="Scripts/ace/mode-css.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\mode-html.js" Url="Scripts/ace/mode-html.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\mode-javascript.js" Url="Scripts/ace/mode-javascript.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\worker-javascript.js" Url="Scripts/ace/worker-javascript.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace\theme-tomorrow.js" Url="Scripts/ace/theme-tomorrow.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

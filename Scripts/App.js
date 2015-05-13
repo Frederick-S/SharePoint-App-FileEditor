@@ -82,7 +82,7 @@
             type: "GET",
             success: function (response) {
                 if (response.statusCode == 200) {
-                    deferred.resolve(response.body, fileExtension);
+                    deferred.resolve(response.body, fileExtension, fileServerRelativeUrl);
                 } else {
                     deferred.reject(response.statusCode + ": " + response.statusText);
                 }
@@ -97,12 +97,16 @@
         return deferred.promise();
     }
 
+    function writeToFile(fileServerRelativeUrl) {
+
+    }
+
     function readFileContentsOnFail(message) {
         $('.spinner').hide();
         $('.error').text(message).show();
     }
 
-    function render(fileContents, fileExtension) {
+    function render(fileContents, fileExtension, fileServerRelativeUrl) {
         $('#editor').text(fileContents);
         $('.spinner').hide();
 
@@ -122,6 +126,8 @@
             default:
                 break;
         }
+
+
     }
 
     var App = {

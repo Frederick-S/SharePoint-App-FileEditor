@@ -30,7 +30,7 @@
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
     <script type="text/javascript" src="/_layouts/15/SP.RequestExecutor.js"></script>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="../Scripts/ace.js"></script>
+    <script type="text/javascript" src="../Scripts/ace/ace.js"></script>
     <script type="text/javascript" src="../Scripts/App.js"></script>
     <script type="text/javascript">
         App.run();
