@@ -64,7 +64,7 @@
     }
 
     function isSupportedFileExtension(fileExtension) {
-        return /txt|md|xml|js|css|html/i.test(fileExtension);
+        return /js|css|html/i.test(fileExtension);
     }
 
     function readFileContents(fileServerRelativeUrl, appWebUrl, hostWebUrl) {
@@ -82,7 +82,7 @@
             type: "GET",
             success: function (response) {
                 if (response.statusCode == 200) {
-                    alert(response.body);
+                    deferred.resolve(response.body, fileExtension);
                 } else {
                     deferred.reject(response.statusCode + ": " + response.statusText);
                 }
@@ -102,8 +102,26 @@
         $('.error').text(message).show();
     }
 
-    function render(fileContents) {
+    function render(fileContents, fileExtension) {
+        $('#editor').text(fileContents);
+        $('.spinner').hide();
 
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/tomorrow");
+
+        switch (fileExtension) {
+            case 'js':
+                editor.getSession().setMode("ace/mode/javascript");
+                break;
+            case 'css':
+                editor.getSession().setMode("ace/mode/css");
+                break;
+            case 'html':
+                editor.getSession().setMode("ace/mode/html");
+                break;
+            default:
+                break;
+        }
     }
 
     var App = {

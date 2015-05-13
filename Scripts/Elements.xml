@@ -2,5 +2,11 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Scripts">
     <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\ace.js" Url="Scripts/ace.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\mode-css.js" Url="Scripts/mode-css.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\mode-html.js" Url="Scripts/mode-html.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\mode-javascript.js" Url="Scripts/mode-javascript.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\worker-javascript.js" Url="Scripts/worker-javascript.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\theme-tomorrow.js" Url="Scripts/theme-tomorrow.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

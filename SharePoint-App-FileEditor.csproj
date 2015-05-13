@@ -43,6 +43,11 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Scripts\mode-css.js" />
+    <Content Include="Scripts\mode-html.js" />
+    <Content Include="Scripts\mode-javascript.js" />
+    <Content Include="Scripts\theme-tomorrow.js" />
+    <Content Include="Scripts\worker-javascript.js" />
     <None Include="MenuItemEditFileAction\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{51752d02-0065-4f19-b919-783320df7ec2}</SharePointProjectItemId>
     </None>
@@ -60,6 +65,7 @@
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{61c30d6f-6dd5-48b6-a780-cbf12222a20d}</SharePointProjectItemId>
     </None>
+    <Content Include="Scripts\ace.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
   </ItemGroup>
